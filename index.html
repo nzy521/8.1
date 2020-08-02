@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="banner.css">
+
+</head>
+
+<body>
+
+    <script src="menu.js"></script>
+    <!-- 头部开始 -->
+    <div class="container clearfix">
+
+        <div class="fl c-logo com-1-2">
+            <a href="">
+                <img src="imgs/logo.png" alt="">
+            </a>
+        </div>
+
+        <div class="fl clearfix top com-1-2">
+
+            <div class="fr dh">
+                <span>021-64356299 15601850919</span>
+            </div>
+
+            <div class="c-nav" id="cssmenu">
+                <div id="menu-button"></div>
+                <ul>
+                    <span>|</span>
+
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    <span>|</span>
+
+                    <li class="has-sub">
+                        <span class="submenu-button"></span>
+                        <a href="">关于我们</a>
+                        <ul>
+                            <li>
+                                <a href="">公司介绍</a>
+                            </li>
+
+                            <li>
+                                <a href="">售后服务</a>
+                            </li>
+
+                            <li>
+                                <a href="">人才招聘</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <span>|</span>
+
+                    <li>
+                        <a href="">业务领域</a>
+                    </li>
+                    <span>|</span>
+
+                    <li class="has-sub">
+                        <span class="submenu-button"></span>
+                        <a href="">工程案例</a>
+                        <ul>
+                            <li><a href="">干燥系统工程</a></li>
+
+                            <li><a href="">净化系统工程</a></li>
+
+                            <li><a href="">大型中央空调系统工程</a></li>
+
+                            <li><a href="">恒温恒湿系统工程</a></li>
+                        </ul>
+                    </li>
+                    <span>|</span>
+
+                    <li>
+                        <a href="">配套产品</a>
+                    </li>
+                    <span>|</span>
+
+                    <li>
+                        <a href="">技术知识</a>
+                    </li>
+                    <span>|</span>
+
+                    <li>
+                        <a href="">联系我们</a>
+                    </li>
+                    <span>|</span>
+
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 头部结束 -->
+    <!-- banner开始 -->
+
+    <div class="window">
+        <div class="box">
+            <a href=""></a>
+            <a href=""></a>
+
+            <a href=""></a>
+        </div>
+        <ul class="btns">
+            <li></li>
+            <li></li>
+
+        </ul>
+    </div>
+    <script src="animate.js"></script>
+    <script>
+
+        //获得窗口的对象，用它来获得每一次轮播的距离
+        var wins = document.getElementsByClassName("window")[0];
+        //获得大的容器的对象
+        var box = document.getElementsByClassName("box")[0];
+        //获取按钮的集合
+        var btns = document.querySelectorAll(".btns li");
+
+
+        // 即时完成 
+        //如何获得窗口的大小
+        // console.log(window.innerWidth);
+        // console.log(document.documentElement.clientWidth);
+
+
+        //获得轮播的运动长度
+        var winW = parseInt(getComputedStyle(wins, null).width);
+
+        var num = 0;
+        //运动函数
+        function move() {
+            //每次轮播都要加一
+            num++;
+            //当运动到最后一张的处理逻辑
+            if (num > btns.length - 1) {
+                //当运动完最后一张，需要即时回到第一张
+                animate(box, {
+                    "margin-left": -num * winW
+                }, 300, Tween.Linear, function () {
+                    // num = 0;
+                    box.style.marginLeft = 0;
+                })
+                //将位置再回拨到第一张
+                num = 0;
+            } else {
+                //除了最后一张的运动方式
+                animate(box, {
+                    "margin-left": -num * winW
+                }, 300)
+            }
+
+            //按钮随着轮播的变化而变化
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.background = "#ffffff"
+            }
+            btns[num].style.background = "#0F6FB8";
+
+        }
+
+        //每隔3s运动一次
+        var t = setInterval(move, 3000);
+        //按钮轮播
+        //按钮进行切换
+        for (let i = 0; i < btns.length; i++) {
+            //给每个按钮添加事件
+            btns[i].onclick = function () {
+                num = i;//将当前点击的按钮和轮播的值进行关联
+                //点击的时候的运动方式
+                animate(box, {
+                    "margin-left": -num * winW
+                }, 300)
+
+                //按钮点击的时候的变化
+                for (var j = 0; j < btns.length; j++) {
+                    btns[j].style.background = "#ffffff"
+                }
+                btns[num].style.background = "#0F6FB8";
+            }
+        }
+
+        // 鼠标的移入移出  事件里面最复杂的一个事件
+        //鼠标移入的时候 停止轮播
+        wins.onmouseover = function () {
+            clearInterval(t);
+        }
+        //鼠标离开的时候 继续动画
+        wins.onmouseout = function () {
+            t = setInterval(move, 3000);
+        } 
+    </script>
+    <!-- banner结束 -->
+
+    <!-- 中部1开始 -->
+    <div class="c-bigtitle">
+        <img src="./imgs/tit.png" alt="">
+        <h1>我们优势</h1>
+    </div>
+    <!-- 中部1结束 -->
+
+    <!--中部2开始  -->
+    <div class="container">
+        <img src="./imgs/youshi.jpg" alt="">
+    </div>
+    <!-- 中部2结束 -->
+
+    <!-- 中部3开始 -->
+    <div class="gray">
+        <div class="c-bigtitle">
+            <img src="./imgs/tit.png" alt="">
+            <h1>业务领域</h1>
+        </div>
+
+        <div class="yw1">
+            <div class="container">
+                <div class="yw_img hide show-m com1-1">
+                    <img src="./imgs/yw1.jpg" alt="">
+                </div>
+                <div class="yw_son col-1-2 com-1-1">
+                    <h3><span>干燥系统工程</span></h3>
+                    <p>
+                        面对众多的产业、理化性质各不相同的物料、产品质量及其他方面千差万别的要求，干燥技术是一门跨行业、跨学科、具有实验科学性质的技术。
+                        通常，在干燥技术的开发及应用中需要具备三个方面的知识和技术。第一是需要了解被干燥物料的理化性质和产品的使用特点。...
+                    </p>
+                    <div class="more">
+                        <a href="">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="yw2">
+            <div class="container clearfix">
+                <div class="yw_img hide show-m com1-1">
+                    <img src="./imgs/yw2.gif" alt="">
+                </div>
+                <div class="yw_son col-1-2 com-1-1">
+                    <h3><span>净化系统工程</span></h3>
+                    <p>
+                        强大的综合实力，确保客户提供符合国际、国内GMP规范的全面工程净化解决方案。业务遍及航空航天、食品工业、化妆品、微电子、生物工程、集成电路、医药卫生、电子器械、工业、科研教学等高新技术产业领域，承建各种不同类型的工业洁净室与卫生洁净室。工程...
+                    </p>
+                    <div class="more">
+                        <a href="">了解更多</a>
+                    </div>
+                </div>
+                ::after
+            </div>
+        </div>
+
+        <div class="yw3">
+            <div class="container">
+                <div class="yw_img hide show-m com1-1">
+                    <img src="./imgs/yw3.gif" alt="">
+                </div>
+                <div class="yw_son col-1-2 com-1-1">
+                    <h3><span>大型中央空调系统</span></h3>
+                    <p>
+                        钹航建设优选的中央空调解决方案应用于各种工业与民用领域，力求系统简洁配置灵活、运行可靠控制智能化，实现远程监控及网络化管理，节能化设计，最大限度节约能源消耗，降低企业运营成本，控制精度高，采用高品质PLC数据采集、分析及控制系统，实现房间的...
+                    </p>
+                    <div class="more">
+                        <a href="">了解更多</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yw4">
+            <div class="container clearfix">
+                <div class="yw_img hide show-m com1-1">
+                    <img src="./imgs/yw4.gif" alt="">
+                </div>
+                <div class="yw_son col-1-2 com-1-1">
+                    <h3><span>恒温恒湿系统工程</span></h3>
+                    <p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;恒温恒湿系统主要用在药品生产车间，用智能设备，保持车间内的温度和湿度在极小的范围内变化。通常所说的就是空调系统和空气净化系统。在微生物实验室里，培养箱也是恒温恒湿系统。
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        恒温是指通过自动温控设备，使温度保持不变得状...
+                    </p>
+                    <div class="more">
+                        <a href="">了解更多</a>
+                    </div>
+                </div>
+                ::after
+            </div>
+        </div>
+
+    </div>
+    <!-- 中部3结束 -->
+
+    <!-- 中部4开始 关于我们 -->
+    <div class="c-bigtitle">
+        <img src="./imgs/tit.png" alt="">
+        <h1>关于我们</h1>
+    </div>
+
+    <div class="blue">
+        <div class="container clearfix">
+            <div class="about_wz">
+                <div class="sl">
+                    <p>
+                        钹航建设工程（上海）有限公司是一家专业从事除湿干燥、净化工程、中央空调系统工程的综合性企业。公司从事空气干燥及净化行业多年，在热、锂电池干燥房、电子与工业厂房、医药、食品饮料、化妆品、生物工程、实验室净化等行业有多个成功案例。近年来，在中国航天、中国兵器、中国电科、中国工程物理研究院等关键部门有着多个成功案例，是国内低露点、干燥工程领域的先驱者和领航者。
+                    </p>
+                    <div class="more">
+                        <a href="">了解更多</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="about_video">
+                <div class="about-img" style="z-index: 0;">
+                    <div style="position: relative;">
+
+                        <div
+                            style="position: absolute; bottom:0; left: 0; width: 100%; height: 1px ; background-color: #F5F5F5; z-index: -10;">
+                        </div>
+
+                        <video id="videos2" width="100%" poster="./imgs/img-bg.jpg" controls="" preload="metadata"
+                            autobuffer="">
+                            <source src="./imgs/视频.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- 中部4结束 关于我们 -->
+
+    <!-- 中部5开始 合作客户 -->
+    <div class="c-bigtitle">
+        <img src="./imgs/tit.png" alt="">
+        <h1>合作客户</h1>
+    </div>
+
+
+
+    <div class="link">
+        <div class="container">
+            <p style="text-align: center;">
+                <img src="./imgs/link.jpg" alt="">
+            </p>
+        </div>
+    </div>
+    <!-- 中部5结束 合作客户 -->
+
+    <!-- 底部开始 -->
+    <div class="footer">
+        <div class="container">
+            <ul class="clearfix">
+                <li class="dh_f">
+                    <h1>
+                        <img src="./imgs/logo_f.png" alt="">
+                    </h1>
+                    <p>
+                        <span>021-64356299 15601850919</span>
+                    </p>
+                </li>
+
+
+                <li>
+                    <dt>关于我们</dt>
+                    <dd>
+                        <a href="">公司介绍</a>
+                    </dd>
+                    <dd>
+                        <a href="">售后服务</a>
+                    </dd>
+                    <dd>
+                        <a href="">人才招聘</a>
+                    </dd>
+                    <dd>
+                        <a href="">联系我们</a>
+                    </dd>
+                </li>
+
+                <li>
+                    <dt>工程案例</dt>
+                    <dd>
+                        <a href="">干燥系统工程</a>
+                    </dd>
+                    <dd>
+                        <a href="">净化系统工程</a>
+                    </dd>
+                    <dd>
+                        <a href="">大型中央空调系统工程</a>
+                    </dd>
+                    <dd>
+                        <a href="">恒温恒湿系统工程</a>
+                    </dd>
+                </li>
+
+                <li>
+                    <dt>其他</dt>
+                    <dd>
+                        <a href="">业务领域</a>
+                    </dd>
+                    <dd>
+                        <a href="">配套产品</a>
+                    </dd>
+                    <dd>
+                        <a href="">技术知识</a>
+                    </dd>
+                </li>
+
+                <li>
+                    <dt>友情链接</dt>
+                    <dd><a href="">起点锂电大数据</a></dd>
+                </li>
+                ::after
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="c-footer-info">
+        版权所有©钹航建设工程（上海）有限公司
+        <a href="" target="_blank" style="color: #5B87C5;">沪ICP备17057343号-1</a>
+
+    </div>
+    <!-- 底部结束 -->
+
+    <style type="text/css">
+        .fixed_div {
+            position: fixed;
+            right: 0;
+            bottom: 290px;
+            width: 190px;
+            height: 151px;
+            overflow: hidden;
+        }
+    </style>
+    <div class="fixed_div">
+        <img src="./imgs/seekColorBack1.png" alt="">
+    </div>
+
+
+    <style>
+        .fixed_div2 {
+            position: fixed;
+            left: 0;
+            bottom: 0px;
+            width: 240px;
+            height: 400px;
+            overflow: hidden;
+            background: #ededed;
+            border-radius: 2%;
+        }
+
+        .one {
+            width: 240px;
+            height: 35px;
+            background: #00AEF3;
+        }
+
+        .one span {
+            float: left;
+            font-size: 14px;
+            color: #fff;
+            margin-left: 12px;
+            line-height: 35px;
+        }
+
+        .close {
+            display: inline-block;
+            float: right;
+            height: 30px;
+            width: 34px;
+            margin-top: 2px;
+            cursor: pointer;
+            background: transparent url(./imgs/nodeMin.png) no-repeat;
+        }
+
+        .two {
+            width: 240px;
+            height: 60px;
+            zoom: 1;
+            padding: 12px 0;
+            border-bottom: 1px solid #d5d5d5;
+
+        }
+
+        .two p {
+            font-size: 14px;
+            background-color: transparent;
+            color: #666;
+            line-height: 18px;
+            margin: 0 8px 0 9px;
+        }
+
+        .two span {
+            background-color: transparent;
+            color: #999;
+            line-height: 18px;
+            margin: 0 8px 0 9px;
+        }
+
+        .three {
+            width: 240px;
+            height: 81px;
+
+        }
+
+        .three textarea {
+            height: 79px;
+            width: 212px;
+            margin: 12px auto 7px;
+            padding: 0 4px;
+            resize: none;
+            overflow: hidden;
+            background-color: #fff;
+            text-align: left;
+            border-radius: 0;
+            left: 0px;
+            position: relative;
+            text-decoration: none;
+            display: block;
+            font-size: 12px;
+            font-family: inherit;
+
+        }
+
+        .four {
+            width: 240px;
+            height: 30px;
+        }
+
+        .four div {
+            width: 212px;
+            height: 30px;
+            z-index: 4;
+            line-height: 30px;
+            margin: 7px auto 0;
+            border: 1px solid #d5d5d5;
+            position: relative;
+            background-color: #fff;
+            display: block;
+            text-decoration: none;
+        }
+
+        .name img {
+            width: 15px;
+            height: 13px;
+            display: inline-block;
+            text-align: center;
+            background-color: #fff;
+            vertical-align: top;
+            border-right: 1px solid #fff;
+            position: relative;
+            left: 8px;
+            bottom: -7px;
+        }
+        .name input{
+            margin: 0;
+            width: 140px;
+            height: 25px;
+            line-height: 30px;
+            overflow: hidden;
+            border: none;
+            display: inline-block;
+            position: relative;
+            left: 15px;
+            bottom: 1px;
+        }
+        .five{
+            height: 53px;
+            width: 202px;
+            margin: 12px auto 0 10px;
+            padding-bottom: 18px;
+            position: relative;
+            left: 5px;
+        }
+        .five div{
+            height: 35px;
+            width: 90px;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            background-color: #00aef3;
+
+        }
+    </style>
+    <div class="fixed_div2">
+        <div class="one">
+            <span>请您留言</span>
+            <div class="close"></div>
+        </div>
+
+        <div class="two">
+            <p>钹航建设工程</p>
+            <span>021-64356299</span>
+        </div>
+
+        <div class="three">
+            <textarea id="nb-nodeboard-set-content-js" name="content" data-ph="请在此输入留言内容，我们会尽快与您联系。（必填）"
+                placeholder="请在此输入留言内容，我们会尽快与您联系。（必填）" class="nb-nodeboard-set-content nb-nodeboard-param"></textarea>
+        </div>
+
+        <div class="four">
+            <div class="name">
+                <img src="./imgs/user.png" alt="" style="background: no-repeat 9px center">
+
+                <input id="nb_nodeboard_set_name" data-write="0" name="visitorName" maxlength="30" class="nb-nodeboard-input nb-nodeboard-param" type="text" data-ph="姓名" placeholder="姓名">
+            </div>
+        </div>
+
+        <div class="four">
+            <div class="name">
+                <img src="./imgs/nodephone.png" alt="" style="background: no-repeat 9px center">
+
+                <input id="nb_nodeboard_set_name" data-write="0" name="visitorName" maxlength="30" class="nb-nodeboard-input nb-nodeboard-param" type="text" data-ph="电话(必填)" placeholder="电话(必填)">
+            </div>
+        </div>
+        <div class="four">
+            <div class="name">
+                <img src="./imgs/nodemail.png" alt="" style="background: no-repeat 9px center">
+
+                <input id="nb_nodeboard_set_name" data-write="0" name="visitorName" maxlength="30" class="nb-nodeboard-input nb-nodeboard-param" type="text" data-ph="邮箱" placeholder="邮箱">
+            </div>
+        </div>
+        <div class="four">
+            <div class="name">
+                <img src="./imgs/nodelocation.png" alt="" style="background: no-repeat 9px center">
+
+                <input id="nb_nodeboard_set_name" data-write="0" name="visitorName" maxlength="30" class="nb-nodeboard-input nb-nodeboard-param" type="text" data-ph="地址" placeholder="地址">
+            </div>
+        </div>
+
+        <div class="five">
+            <div class="center">发送</div>
+        </div>
+
+    </div>
+    <script>
+        var close=document.querySelector(".close");
+        var fixed=document.querySelector(".fixed_div2")
+        close.onclick=function(){
+            
+            close.style=null;
+            this.innerHTML=""
+            
+            animate(fixed,{
+               width:240,
+               height:40,
+               top:document.documentElement.clientHeight-70,  
+            },100)
+
+            close.onclick=function(){
+                close.style=null;
+            this.innerHTML=""
+            
+            animate(fixed,{
+               width:240,
+               height:400,
+               top:document.documentElement.clientHeight-400 
+            },100)
+            }
+            
+        }  
+    </script>
+<style>
+    .zero{
+        position: fixed;
+        bottom: 30px;
+        right: 10px;
+        width: 60px;
+        height: 60px; 
+    }
+</style>
+<div class="zero">
+    <img src="./imgs/top.png" alt="">
+</div>
+    
+<script src="animate3.js"></script>
+ <script>
+     var zero=document.querySelector(".zero");
+      //滚动事件
+      window.onscroll = function () {
+            var st = document.documentElement.scrollTop;//获取滚动条位置
+            if (st > 200) {
+                //search.style.top=0;俩种方法设置滚动条
+                animate(zero, {
+                    top: 200
+                }, 300)
+            }
+            else {
+                //search.style.top=-50+"px";俩种方法设置滚动条
+                animate(zero, {
+                    top: 0
+                }, 300)
+            }
+            if (st > 400) {
+                // nav.style.width="50px"
+                // nav.style.height="300px"
+                zero.style.transform = "scale(1,1)";
+                zero.style.opacity = 1;
+            } else {
+                // nav.style.winth="0px"
+                // nav.style.height="0px"
+                zero.style.transform = "scale(0,0)"
+                zero.style.opacity = 0;
+            }
+        }
+
+       
+        zero.onclick = function () {
+            animate(document.documentElement, {
+                scrollTop: 0
+            }, 500)
+        }
+       
+        
+ </script>
+    
+
+
+
+
+
+
+
+</body>
+
+</html>

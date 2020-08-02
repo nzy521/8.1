@@ -1,0 +1,537 @@
+*{
+    box-sizing: border-box;
+}
+
+div{
+    display: block;
+}
+
+html,body{
+    font-family: "SIMHEI","Microsoft YaHei";
+    font-size: 14px;
+    color: #666;
+}
+
+img{
+    max-width: 100%;
+    border: 0;
+    vertical-align: middle;
+}
+
+a{
+    text-decoration: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+ul{
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    text-align: -webkit-match-parent;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+}
+
+a{
+    color:#333;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+.clearfix{
+    zoom: 1;
+}
+/* 头部开始 */
+.c-logo{
+    width: 30%;
+    padding: 0px 50px 10px;
+    margin-top: 45px;
+    box-sizing: border-box;
+}
+.fl{
+    float: left;
+}
+
+.top{
+    width: 70%;
+}
+
+.fr{
+    float: right;
+}
+
+.dh{
+    font-size: 20px;
+    font-style: italic;
+    color: #3169BD;
+    padding-left: 32px;
+    font-weight: bold;
+    font-family: "Arial";
+    margin-top: 40px;
+    height: 40px;
+    width: 100%;
+    margin-right: 40px;
+}
+
+.dh span {
+    display: block;
+    text-align: right;
+    background: url(./imgs/dh.png) no-repeat left center;
+    width: 290px;
+    float: right;
+}
+
+#cssmenu{
+    width: auto;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#cssmenu #menu-button{
+    display: none;
+}
+
+#cssmenu #menu-button{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+#cssmenu ul,li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+}
+
+.c-nav>ul span{
+    float: left;
+    line-height: 26px;
+    color: #ddd;
+    width: 0;
+    margin-left: -3px;
+}
+
+#cssmenu>ul>li{
+    float: left;
+    width: 14%;
+}
+
+#cssmenu>ul>li>a{
+    font-size: 16px;
+    transition: color .2s ease;
+    line-height: 30px;
+    text-align: center;
+    height: 40px;
+    color: #3169BD;
+}
+
+#cssmenu>ul>li.has-sub>a {
+    background: url(./imgs/ico-blue.png) no-repeat center 30px;
+}
+#cssmenu ul li a{
+    
+    padding: 0;
+    border: 0;
+    list-style: none;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#cssmenu ul ul{
+    position: absolute;
+    left: -1409px;
+    background-color: #EFF3FA;
+    padding: 0 0 0 1400px;
+    z-index: 99;
+    width: 3000px;
+}
+
+#cssmenu ul{
+    margin: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    box-sizing: border-box;
+}
+
+ #cssmenu ul ul li{
+    height: 0;
+    transition: height .2s ease;
+    float: left !important;
+}
+
+#cssmenu ul li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#cssmenu ul li ul li a{
+    height: 0px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    line-height: 40px;
+    opacity: 0;
+    transition: .2s;
+}
+#cssmenu > ul > li:hover > a{
+    color: #fff;
+    background: #3169BD;
+}
+
+#cssmenu ul li:hover > ul > li {
+    height: 40px;
+}
+#cssmenu ul li:hover ul li a {opacity: 1}
+
+/* 头部结束 */
+/* 中部1开始 */
+.c-bigtitle{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.c-bigtitle>h1{
+    font-size: 28px;
+    color: #333;
+    padding-top: 10px;
+}
+
+h1, h2, h3, h4, p{
+    font-weight: normal;
+    margin: 0;
+}
+/* 中部1结束 */
+
+/* 中部2开始 */
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.clearfix{
+    zoom: 1;
+}
+/* 中部2结束 */
+
+/* 中部3开始 */
+.gray{
+    background: #F2F2F2;
+    padding-top: 20px;
+}
+
+.yw1{
+    padding:75px 0;
+    margin-top: 20px;
+    background: #31698d url(./imgs/yw1.jpg)no-repeat top center;
+}
+
+.hide{
+    display: none;
+}
+
+.yw1 .yw_son{
+    background: #fff;
+    padding:55px 30px 45px;
+    width: 30%;
+}
+
+.yw1 .yw_son h3{
+    font-size: 24px;
+    background: url(./imgs/yw_ico1.png) no-repeat left center;
+    padding-left: 40px;
+}
+
+.yw1 .yw_son h3 span {
+    border-bottom: 2px solid #2F69BD;
+}
+
+.yw_son p {
+    font-size: 16px;
+    line-height: 30px;
+    margin: 30px 0;
+}
+
+.more{
+    text-align: center;
+}
+
+.yw1 .yw_son .more a{
+    background: linear-gradient(to right, #2F69BD, #2F69BD) no-repeat;
+    background-size: 0% 100%;
+    color: #2F69BD;
+}
+
+.more a{
+    transition: all .5s;
+    display: inline-block;
+    border: 1px solid #2f69bd;
+    padding:5px 25px ;
+    border-radius: 15px;
+}
+
+.yw2{
+    padding:75px 0;
+    background: #31698d url(./imgs/yw2.gif)no-repeat top center;
+}
+
+.yw2 .yw_son{
+    background: #3169BD;
+    padding:55px 30px 45px;
+    width: 30%;
+    float: right;
+    color: #fff;
+}
+
+.yw2 .yw_son h3{
+    font-size: 24px;
+    background: url(./imgs/yw_ico2.png) no-repeat left center;
+    padding-left: 40px;
+}
+
+.yw2 .yw_son h3 span {
+    border-bottom: 2px solid #fff;
+}
+
+.yw2 .yw_son .more a{
+    background: linear-gradient(to right, #2F69BD, #2F69BD) no-repeat;
+    background-size: 0% 100%;
+    color: #2F69BD;
+}
+.clearfix:after {
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.yw3{
+    padding:75px 0;
+
+    background: #31698d url(./imgs/yw3.gif)no-repeat top center;
+}
+
+.yw3 .yw_son{
+    background: #fff;
+    padding:55px 30px 45px;
+    width: 30%;
+}
+
+.yw3 .yw_son h3{
+    font-size: 24px;
+    background: url(./imgs/yw_ico3.png) no-repeat left center;
+    padding-left: 40px;
+}
+
+.yw3 .yw_son h3 span {
+    border-bottom: 2px solid #2F69BD;
+}
+
+.yw3 .yw_son .more a{
+    background: linear-gradient(to right, #2F69BD, #2F69BD) no-repeat;
+    background-size: 0% 100%;
+    color: #2F69BD;
+}
+
+.yw4{
+    padding:75px 0;
+    background: #31698d url(./imgs/yw4.gif)no-repeat top center;
+}
+
+.yw4 .yw_son{
+    background: #3169BD;
+    padding:55px 30px 45px;
+    width: 30%;
+    float: right;
+    color: #fff;
+}
+
+.yw4 .yw_son h3{
+    font-size: 24px;
+    background: url(./imgs/yw_ico4.png) no-repeat left center;
+    padding-left: 40px;
+}
+
+.yw4 .yw_son h3 span {
+    border-bottom: 2px solid #fff;
+}
+
+.yw4 .yw_son .more a{
+    background: linear-gradient(to right, #2F69BD, #2F69BD) no-repeat;
+    background-size: 0% 100%;
+    color: #2F69BD;
+}
+.clearfix:after {
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* 中部3结束 */
+
+/* 中部4开始 关于我们*/
+.blue{
+    background: #D7E2F1;
+
+}
+
+.about_wz{
+    width: 40%;
+    float: left;
+    padding: 35px 4%;
+    -webkit-box-sizing: border-box;
+}
+.sl{
+    background: #356AB9;
+    padding: 35px 35px;
+    color: #fff;
+}
+.sl p{
+    font-size: 16px;
+    line-height: 30px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.sl .more a {
+    border-color: #fff;
+    color: #fff;
+    background: linear-gradient(to right, #fff, #fff) no-repeat;
+    background-size: 0% 100%;
+}
+
+.about_video{
+    width: 60%;
+    float: right;
+}
+.about-img video{
+    height: 500px;
+}
+/* 中部4结束 关于我们 */
+
+/* 底部开始 */
+.footer{
+    background: #356AB9;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+.footer li.dh_f{
+    text-align: center;
+}
+
+.footer li{
+    float: left;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    -webkit-box-sizing: border-box;
+    border-right: 1px solid #5B87C5;
+    padding: 0 50px;
+    height: 190px;
+}
+
+.footer li.dh_f p {
+    color: #fff;
+    font-style: italic;
+    font-family: "Arial";
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.footer li.dh_f p span {
+    padding-left: 32px;
+    width: 180px;
+    display: block;
+}
+
+.footer li dt {
+    color: #fff;
+    font-size: 18px;
+    margin: 12px 0;
+}
+dt,dd{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer li dd {
+    line-height: 28px;
+}
+
+.footer li dd a {
+    color: #fff;
+    background: url(./imgs/zj.png) no-repeat left center;
+    padding-left: 15px;
+
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+   
+}
+
+.footer li dd a:hover{
+    text-decoration: underline;
+}
+
+.clearfix:after {
+    content: "020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.c-footer-info {
+    background-color: #356AB9;
+    border-top: 1px solid #5B87C5;
+    padding: 22px 0;
+    text-align: center;
+    color: #a3bfe7;
+    font-size: 12px;
+}
+/* 底部结束 */
+
+
